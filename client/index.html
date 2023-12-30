@@ -9,6 +9,8 @@
   </head>
   <body>
     <main>
+      <button id="createNewListingBtn">Create New Listing</button>
+
       <form id="newListingForm">
         <input type="text" name="title" placeholder="Game Title" />
         <input type="number" name="price" placeholder="Price (£)" />
@@ -20,8 +22,12 @@
           <option value="used">Used</option>
           <option value="poor">Poor</option>
         </select>
-        <textarea name="description" placeholder="Description"></textarea>
-        <button>Create</button>
+        <textarea
+          name="description"
+          cols="35"
+          rows="5"
+          placeholder="Description"></textarea>
+        <button id="createListingFormBtn">Create</button>
       </form>
     </main>
   </body>

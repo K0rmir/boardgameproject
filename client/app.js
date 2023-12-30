@@ -1,4 +1,5 @@
 const newListingForm = document.getElementById("newListingForm");
+const createNewListingBtn = document.getElementById("createNewListingBtn");
 
 async function getListings() {
     const response = await fetch("https://localhost:8080/marketplacelistings");
@@ -7,6 +8,12 @@ async function getListings() {
 
 getListings();
 
+createNewListingBtn.addEventListener("click", function() {
+    newListingForm.style.opacity = "1";
+    newListingForm.style.pointerEvents = "all";
+});
+
+// Below is the function for posting new data to the database when a user creates a new listing for sale. //
 async function createNewListing() {
     const formData = new FormData(newListingForm);
     const formValues = Object.fromEntries(formData);
@@ -20,9 +27,10 @@ async function createNewListing() {
     newListingForm.reset();
 };
 
-
-
+// Event listener for create button on form //
 newListingForm.addEventListener("submit", function(event) {
     event.preventDefault();
     createNewListing();
+    newListingForm.style.opacity = "0";
+    newListingForm.style.pointerEvents = "none";
 })
