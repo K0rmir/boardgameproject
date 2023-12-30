@@ -4,10 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <script src="./app.js" defer></script>
+    <script src="./app.js" defer type="module"></script>
     <title>BG Marketplace</title>
   </head>
   <body>
-    <main></main>
+    <main>
+      <form id="newListingForm">
+        <input type="text" name="title" placeholder="Game Title" />
+        <input type="number" name="price" placeholder="Price (£)" />
+        <label for="condition">Condition</label>
+        <select name="condition" id="condition">
+          <option value="new sealed">New & Sealed</option>
+          <option value="new">New</option>
+          <option value="good">Good</option>
+          <option value="used">Used</option>
+          <option value="poor">Poor</option>
+        </select>
+        <textarea name="description" placeholder="Description"></textarea>
+        <button>Create</button>
+      </form>
+    </main>
   </body>
 </html>
