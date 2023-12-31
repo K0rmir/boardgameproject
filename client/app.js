@@ -7,10 +7,13 @@ async function getListings() {
     const response = await fetch("http://localhost:8080/marketplacelistings");
     const listings = await response.json();
     listings.forEach(function(listing) {
-        const { title, price, quality, description } = listing;    
+        const { title, price, quality, description } = listing;
+        const listingCard = document.createElement("div");
+        listingCard.id = "listingCard";
         const p = document.createElement("p");
-        p.textContent = `${title}, ${price}, ${quality}, ${description}`;    
-        listingArea.appendChild(p);
+        p.textContent = `${title} £${price} ${quality}, ${description}`;    
+        listingCard.appendChild(p);
+        listingArea.appendChild(listingCard);
     });
 }
 
@@ -38,11 +41,12 @@ async function createNewListing() {
     const price = formValues.price;
     const quality = formValues.quality;
     const description = formValues.description;
+    const listingCard = document.createElement("div");
+    listingCard.id = "listingCard";
     const p = document.createElement("p");
     p.textContent = `${title}, ${price}, ${quality}, ${description}`; 
-    listingArea.appendChild(p);
-
-
+    listingCard.appendChild(p);
+    listingArea.appendChild(listingCard);
 };
 
 // Event listener for create button on form //
@@ -53,23 +57,3 @@ newListingForm.addEventListener("submit", function(event) {
     newListingForm.style.pointerEvents = "none";
 });
 
-
-
-
-
-
-
-// for (let i = 0; i < listings.length; i++) {
-//     const title = listings[i].title;
-//     const price = listings[i].price;
-//     const quality = listings[i].quality;
-//     const description = listings[i].description;
-//     const p = document.createElement("p");
-//     p.textContent = `${title}`;
-//     p.textContent = `${price}`;
-//     p.textContent = `${quality}`;
-//     p.textContent = `${description}`;
-//     const listingArea = document.getElementById("listingArea");
-//     listingArea.appendChild(p);
-// }
-// };
