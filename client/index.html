@@ -14,10 +14,11 @@
       <div id="listingArea"></div>
 
       <form id="newListingForm">
-        <input type="text" name="title" placeholder="Game Title" />
-        <input type="number" name="price" placeholder="Price (£)" />
+        <input type="text" name="title" required placeholder="Game Title" />
+        <input type="number" name="price" required placeholder="Price (£)" />
         <label for="condition">Condition</label>
-        <select name="condition" id="condition">
+        <select name="condition" id="condition" required>
+          <option value="" disabled selected>Select one...</option>
           <option value="new sealed">New & Sealed</option>
           <option value="new">New</option>
           <option value="good">Good</option>
@@ -28,7 +29,8 @@
           name="description"
           cols="35"
           rows="5"
-          placeholder="Description"></textarea>
+          placeholder="Description"
+          required></textarea>
         <button id="createListingFormBtn">Create</button>
       </form>
     </main>

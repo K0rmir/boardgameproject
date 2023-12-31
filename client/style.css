@@ -25,6 +25,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     gap: 10px;
+    border-radius: 15px;
 }
 
 #createListingFormBtn {
@@ -36,8 +37,6 @@
 
 #listingArea {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     gap: 5px;
 }
@@ -49,6 +48,7 @@
     margin: 10px;
     cursor: pointer;
     padding: 5px;
+    border-radius: 10px;
 }
 
 
