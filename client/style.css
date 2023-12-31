@@ -38,14 +38,14 @@
 #listingArea {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 2px;
 }
 
 #listingCard {
     background-color: lightskyblue;
-    width: 125px;
+    width: 150px;
     height: 100px;
-    margin: 10px;
+    margin: 5px;
     cursor: pointer;
     padding: 5px;
     border-radius: 10px;

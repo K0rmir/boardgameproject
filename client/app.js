@@ -7,11 +7,17 @@ async function getListings() {
     const response = await fetch("http://localhost:8080/marketplacelistings");
     const listings = await response.json();
     listings.forEach(function(listing) {
-        const { title, price, quality, description } = listing;
+        const { title, price, quality} = listing;
         const listingCard = document.createElement("div");
         listingCard.id = "listingCard";
+        const h3 = document.createElement("h3");
+        const h4 = document.createElement("h4");
         const p = document.createElement("p");
-        p.textContent = `${title} £${price} ${quality}, ${description}`;    
+        h3.textContent = `${title}`;
+        h4.textContent = `£${price}`;
+        p.textContent = `${quality}`;
+        listingCard.appendChild(h3);
+        listingCard.appendChild(h4);   
         listingCard.appendChild(p);
         listingArea.appendChild(listingCard);
     });
@@ -43,8 +49,14 @@ async function createNewListing() {
     const description = formValues.description;
     const listingCard = document.createElement("div");
     listingCard.id = "listingCard";
+    const h3 = document.createElement("h3");
+    const h4 = document.createElement("h4");
     const p = document.createElement("p");
-    p.textContent = `${title}, ${price}, ${quality}, ${description}`; 
+    h3.textContent = `${title}`;
+    h4.textContent = `£${price}`;
+    p.textContent = `${quality}`;
+    listingCard.appendChild(h3);
+    listingCard.appendChild(h4);
     listingCard.appendChild(p);
     listingArea.appendChild(listingCard);
 };
