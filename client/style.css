@@ -1,55 +1,88 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #createNewListingBtn {
-    width: 150px;
-    height: 35px;
-    margin: 15px;
-    cursor: pointer;
+  width: 150px;
+  height: 35px;
+  margin: 15px;
+  cursor: pointer;
 }
 
 #newListingForm {
-    opacity: 0;
-    background-color: lightgreen;
-    width: 350px;
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    gap: 10px;
-    border-radius: 15px;
+  opacity: 0;
+  background-color: lightgreen;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  gap: 10px;
+  border-radius: 15px;
 }
 
 #createListingFormBtn {
-    margin-top: 50px;
-    width: 75px;
-    height: 35px;
-    cursor: pointer;
+  margin-top: 50px;
+  width: 75px;
+  height: 35px;
+  cursor: pointer;
 }
 
 #listingArea {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
 }
 
 #listingCard {
-    background-color: lightskyblue;
-    width: 150px;
-    height: 100px;
-    margin: 5px;
-    cursor: pointer;
-    padding: 5px;
-    border-radius: 10px;
+  background-color: lightskyblue;
+  width: 150px;
+  height: 100px;
+  margin: 5px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 10px;
 }
 
+.formContainer {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
 
+#collectionForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
+input,
+select,
+textarea {
+  height: 2.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #000000;
+}
+
+select {
+  padding: 0.5rem;
+}
+
+textarea {
+  height: 10rem;
+}
+
+.createBtn {
+  height: 3rem;
+  width: 10rem;
+  border-radius: 0.5rem;
+  border: 1px solid #000000;
+}
