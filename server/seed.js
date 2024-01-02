@@ -10,12 +10,12 @@ const db = new Database("database.db");
 // Everything written in the brackets is SQL.
 
 db.exec(`CREATE TABLE IF NOT EXISTS marketplacelistings(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     title TEXT,
     price INTEGER,
     condition TEXT,
     description TEXT
 )`);
 
-// The below statement is pushed to the database manually by me but are not a requirement. 
-// If they were not here the database would simply be empty when we load up the client. 
+
 

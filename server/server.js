@@ -37,3 +37,11 @@ app.post("/marketplacelistings", function (request, response) {
     const newListing = db.prepare(`INSERT INTO marketplacelistings (title, price, condition, description) VALUES (?, ?, ?, ?)`).run(title, price, condition, description);
     response.json("listing created");
 });
+
+// POST request to delete entries from database //
+
+app.post("/delete", function (request, response) {
+    let id = request.body.id;
+    db.exec(`DELETE FROM marketplacelistings WHERE id=${id}`);
+    response.json("deleted");
+  });

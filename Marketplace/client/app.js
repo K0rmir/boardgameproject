@@ -1,6 +1,7 @@
 const newListingForm = document.getElementById("newListingForm");
 const createNewListingBtn = document.getElementById("createNewListingBtn");
 const listingArea = document.getElementById("listingArea");
+const buyGameBtn = document.getElementById("buyGameBtn");
 
 // The below function gets all of the database entries (game listings) and displays them on the page when it is loaded.
 async function getListings() {
@@ -13,12 +14,16 @@ async function getListings() {
         const h3 = document.createElement("h3");
         const h4 = document.createElement("h4");
         const p = document.createElement("p");
+        const buyGameBtn = document.createElement("button");
+        buyGameBtn.id = "buyGameBtn";
         h3.textContent = `${title}`;
         h4.textContent = `£${price}`;
         p.textContent = `${condition}`;
+        buyGameBtn.textContent = "Buy Now";
         listingCard.appendChild(h3);
         listingCard.appendChild(h4);   
         listingCard.appendChild(p);
+        listingCard.appendChild(buyGameBtn);
         listingArea.appendChild(listingCard);
     });
 }
@@ -52,12 +57,16 @@ async function createNewListing() {
     const h3 = document.createElement("h3");
     const h4 = document.createElement("h4");
     const p = document.createElement("p");
+    const buyGameBtn = document.createElement("button");
+    buyGameBtn.id = "buyGameBtn";
     h3.textContent = `${title}`;
     h4.textContent = `£${price}`;
     p.textContent = `${condition}`;
+    buyGameBtn.textContent = "Buy Now"
     listingCard.appendChild(h3);
     listingCard.appendChild(h4);
     listingCard.appendChild(p);
+    listingCard.appendChild(buyGameBtn);
     listingArea.appendChild(listingCard);
 };
 
@@ -67,5 +76,13 @@ newListingForm.addEventListener("submit", function(event) {
     createNewListing();
     newListingForm.style.opacity = "0";
     newListingForm.style.pointerEvents = "none";
+});
+
+// Event listener / function for buy now button to remove the listing from the marketplace & remove it from the database. //
+
+buyGameBtn.addEventListener("click", async function () {
+
+
+
 });
 

@@ -51,5 +51,10 @@
     border-radius: 10px;
 }
 
+#buyGameBtn {
+    position: absolute;
+    cursor: pointer;
+}
+
 
 
