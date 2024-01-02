@@ -19,8 +19,3 @@ db.exec(`CREATE TABLE IF NOT EXISTS marketplacelistings(
 // The below statement is pushed to the database manually by me but are not a requirement. 
 // If they were not here the database would simply be empty when we load up the client. 
 
-// db.exec(`
-//     INSERT INTO marketplacelistings (title, price, condition, description)
-//     VALUES
-//     ('Kelp', '35', 'New', 'Brand new, still wrapped')    
-// `);
