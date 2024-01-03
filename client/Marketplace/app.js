@@ -7,7 +7,7 @@ async function getListings() {
   const response = await fetch("http://localhost:8080/marketplacelistings");
   const listings = await response.json();
   listings.forEach(function (listing) {
-    const { title, price, quality } = listing;
+    const { title, price, condition } = listing;
     const listingCard = document.createElement("div");
     listingCard.id = "listingCard";
     const h3 = document.createElement("h3");
@@ -42,11 +42,10 @@ async function createNewListing() {
     },
     body: JSON.stringify(formValues),
   });
-
   newListingForm.reset();
   const title = formValues.title;
   const price = formValues.price;
-  const quality = formValues.quality;
+  const condition = formValues.condition;
   const description = formValues.description;
   const listingCard = document.createElement("div");
   listingCard.id = "listingCard";
@@ -55,11 +54,10 @@ async function createNewListing() {
   const p = document.createElement("p");
   h3.textContent = `${title}`;
   h4.textContent = `£${price}`;
-  p.textContent = `${quality}`;
+  p.textContent = `${condition}`;
   listingCard.appendChild(h3);
   listingCard.appendChild(h4);
   listingCard.appendChild(p);
-
   listingArea.appendChild(listingCard);
 }
 
