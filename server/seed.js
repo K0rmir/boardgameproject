@@ -16,7 +16,7 @@ db.exec(`CREATE TABLE IF NOT EXISTS marketplacelistings(
     description TEXT
 )`);
 
-// Create the user table
+// Create user table
 db.prepare(
   `
   CREATE TABLE IF NOT EXISTS user (
@@ -27,7 +27,7 @@ db.prepare(
 `
 ).run();
 
-// Create the collection table
+// Create collection table
 db.prepare(
   `
   CREATE TABLE IF NOT EXISTS collection (
@@ -48,9 +48,6 @@ const insertUser = db.prepare(
   `INSERT INTO user (username, email) VALUES (?, ?)`
 );
 insertUser.run("john", "john@gmail.com");
-
-// Get the ID of the last inserted user
-// const userId = db.prepare("SELECT user_id as id").get().id;
 
 // Insert an item to the collection table
 const insertItem = db.prepare(`

@@ -58,7 +58,7 @@ app.get("/user", (req, res) => {
   res.json(user);
 });
 
-app.post("/user", (req, res) => {
+app.post("/user", async (req, res) => {
   const { userName, email } = req.body;
 
   const newUser = db
@@ -92,11 +92,12 @@ app.post("/collection", (req, res) => {
     description,
   } = req.body;
 
+  console.log("bodybodybpdy", req.body);
+
   const newCollection = db
     .prepare(
-      `INSERT INTO collection (user_id ,item_name, bought_date, condition, bought_price, description ) VALUES (?, ?, ?, ?, ?, ?)`
+      `INSERT INTO collection (user_id, item_name, bought_date, condition, bought_price, description ) VALUES (?, ?, ?, ?, ?, ?)`
     )
     .run(user_id, item_name, bought_date, condition, bought_price, description);
   res.json(newCollection);
-  console.log(newCollection);
 });
