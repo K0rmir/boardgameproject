@@ -9,10 +9,10 @@
   </head>
   <body>
     <main>
-      <button id="createNewListingBtn">Create New Listing</button>
-
+      <button id="createNewListingBtn" class="addBtn">
+        Create New Listing
+      </button>
       <div id="listingArea"></div>
-
       <form id="newListingForm">
         <input type="text" name="title" required placeholder="Game Title" />
         <input type="number" name="price" required placeholder="Price (£)" />
@@ -30,7 +30,8 @@
           cols="35"
           rows="5"
           placeholder="Description"
-          required></textarea>
+          required
+        ></textarea>
         <button id="createListingFormBtn">Create</button>
       </form>
     </main>
