@@ -3,15 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <script src="collection.js" defer type="module"></script>
     <title>Collection Form</title>
   </head>
   <body>
     <div id="collection" class="collection">
+      <button id="createNewCollectionBtn" class="addBtn">
+        Create New Collection
+      </button>
       <div id="collectionContainer" class="collectionContainer"></div>
       <div class="formContainer">
         <form id="collectionForm">
+          <input type="text" name="user_id" value="1" style="display: none" />
           <input
             type="text"
             name="item_name"
@@ -32,7 +36,6 @@
             required
             placeholder="Bought Price (£)"
           />
-
           <textarea
             name="description"
             cols="35"

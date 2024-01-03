@@ -1,11 +1,13 @@
-const newCollection = document.getElementById("collectionForm");
+const newCollectionForm = document.getElementById("collectionForm");
 const addCollection = document.getElementById("createBtn");
 const collectionContainer = document.getElementById("collectionContainer");
+const createNewCollectionBtn = document.getElementById(
+  "createNewCollectionBtn"
+);
 
 async function getCollection() {
   const response = await fetch("http://localhost:8080/collection");
   const collections = response.json();
-  console.log(collections, "collect");
 
   Object.keys(collections).forEach(function (collection) {
     const { item_name, bought_date, bought_price, description } = collection;
@@ -29,9 +31,9 @@ async function getCollection() {
 }
 
 async function createNewCollection() {
-  const formData = new FormData(newCollection);
+  const formData = new FormData(newCollectionForm);
   const formValues = Object.fromEntries(formData);
-  console.log(formValues);
+
   const response = await fetch("http://localhost:8080/collection", {
     method: "POST",
     headers: {
@@ -39,7 +41,9 @@ async function createNewCollection() {
     },
     body: JSON.stringify(formValues),
   });
-  newCollection.reset();
+  const json = await response.json();
+  console.log(json, "json");
+  newCollectionForm.reset();
 
   const item_name = formValues.item_name;
   const bought_date = formValues.bought_date;
@@ -64,10 +68,16 @@ async function createNewCollection() {
   collectionContainer.appendChild(collectionCard);
 }
 
-newCollection.addEventListener("submit", (e) => {
+createNewCollectionBtn.addEventListener("click", function () {
+  newCollectionForm.style.opacity = "1";
+  newCollectionForm.style.pointerEvents = "all";
+});
+
+newCollectionForm.addEventListener("submit", (e) => {
   e.preventDefault();
   createNewCollection();
-  newCollection.style.opacity = "0";
-  newCollection.style.pointerEvents = "none";
+  newCollectionForm.style.opacity = "0";
+  newCollectionForm.style.pointerEvents = "none";
 });
+
 getCollection();

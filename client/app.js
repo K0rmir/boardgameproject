@@ -42,6 +42,7 @@ async function createNewListing() {
     },
     body: JSON.stringify(formValues),
   });
+
   newListingForm.reset();
   const title = formValues.title;
   const price = formValues.price;
