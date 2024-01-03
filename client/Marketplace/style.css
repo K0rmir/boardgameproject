@@ -41,7 +41,7 @@
     gap: 2px;
 }
 
-#listingCard {
+.listingCard {
     background-color: lightskyblue;
     width: 150px;
     height: 100px;

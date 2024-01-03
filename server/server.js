@@ -38,10 +38,11 @@ app.post("/marketplacelistings", function (request, response) {
     response.json("listing created");
 });
 
-// POST request to delete entries from database //
+// // POST request to delete entries from database //
 
-app.post("/delete", function (request, response) {
-    let id = request.body.id;
-    db.exec(`DELETE FROM marketplacelistings WHERE id=${id}`);
-    response.json("deleted");
-  });
+// Endpoint to delete a listing
+app.delete('/marketplacelistings/:id', function (request, response) {
+    const id = request.params.id;
+    db.prepare(`DELETE FROM marketplacelistings WHERE id = ?`).run(id);
+    response.json("Successfully Deleted")
+});
