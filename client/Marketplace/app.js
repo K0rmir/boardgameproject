@@ -15,7 +15,7 @@ async function getListings() {
     const p = document.createElement("p");
     h3.textContent = `${title}`;
     h4.textContent = `£${price}`;
-    p.textContent = `${quality}`;
+    p.textContent = `${condition}`;
     listingCard.appendChild(h3);
     listingCard.appendChild(h4);
     listingCard.appendChild(p);
